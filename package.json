@@ -1,0 +1,19 @@
+{
+  "name": "egzamen",
+  "version": "1.0.0",
+  "description": "examen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinejend/egzamen.git"
+  },
+  "author": "Christine Jend.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christinejend/egzamen/issues"
+  },
+  "homepage": "https://github.com/christinejend/egzamen#readme"
+}
