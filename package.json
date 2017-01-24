@@ -15,5 +15,32 @@
   "bugs": {
     "url": "https://github.com/christinejend/egzamen/issues"
   },
-  "homepage": "https://github.com/christinejend/egzamen#readme"
+  "browser": {
+  "vue": "vue/dist/vue.common"
+  },
+  "homepage": "https://github.com/christinejend/egzamen#readme",
+  "dependencies": {
+    "babelify": "^7.3.0",
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "browserify": "^13.3.0",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "mitan-eko": "^0.1.0",
+    "mongodb": "^2.2.19",
+    "response-time": "^2.3.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^3.1.0",
+    "vue": "^2.1.4",
+    "vue-router": "^2.1.1",
+    "node-bourbon": "^4.2.8"
+  }
 }
