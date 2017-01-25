@@ -1,10 +1,8 @@
-/* leny/kach
- *
- * /src/controllers/system/echo.js - Controller for system echo
- *
- * coded by leny@flatLand!
- * started at 21/10/2016
- */
+/*
+  src/controllers/quick/details.js
+  coded CHRISTINE JEND.
+  started at 04/01/2017
+  */
 
 import { send } from "../../core/utils/api";
 

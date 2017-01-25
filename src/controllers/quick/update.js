@@ -67,11 +67,7 @@
               oQuick.address = sAddress;
               aModifications.push( "address" );
           }
-          // 3c. check empty
-          if ( bEmpty ) {
-              oQuick.empty = true;
-              aModifications.push( "empty" );
-          }
+        
 
           let oModificationsToApply = {};
 

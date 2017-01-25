@@ -1,10 +1,8 @@
-/* leny/kach
- *
- * /src/controllers/system/ping.js - Controller for system ping
- *
- * coded by leny@flatLand!
- * started at 21/10/2016
- */
+/*
+  src/controllers/quick/details.js
+  coded CHRISTINE JEND.
+  started at 04/01/2017
+  */
 
 import { send } from "../../core/utils/api";
 

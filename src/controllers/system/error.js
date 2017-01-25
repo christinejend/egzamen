@@ -1,10 +1,8 @@
-/* leny/kach
- *
- * /src/controllers/system/error.js - Controller for system error
- *
- * coded by leny@flatLand!
- * started at 21/10/2016
- */
+/*
+  src/controllers/quick/details.js
+  coded CHRISTINE JEND.
+  started at 04/01/2017
+  */
 
 import { error } from "../../core/utils/api";
 

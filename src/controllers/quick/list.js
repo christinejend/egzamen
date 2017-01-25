@@ -38,19 +38,18 @@ let oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.
                 "$gt": oCurrentPosition.longitude - iSearchRadius,
                 "$lt": oCurrentPosition.longitude + iSearchRadius,
             },
-            "deleted_at": null,
         }  )
           .toArray()
           .then( ( aQuicks = [] ) => {
             let aCleanQuick,
-            bState,
             iCurrentDay = new Date().getDay(),
             iCurrentHours = new Date().getHours() + ( new Date().getMinutes()/60 );
 
 
             // clean empty state on Quicks
             aCleanQuick = aQuicks.map( ( {  _id, name, address} ) =>
-/*          {
+        /*  {
+let bState;
               if ( iCurrentDay >= hours[ iCurrentDay][0] && iCurrentHours <= hours[iCurrentDay][1]) {
                 bState = "ouvert";
               }else {
@@ -62,10 +61,11 @@ let oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.
                   "bState": bState,
                   "distance": distance( oCurrentPosition, { latitude, longitude } ) * 1000,
                   name, address,
-              };*/
+              };
+            });*/
               ({
                    _id, name, address
-                    }));
+                 }));
 
         // sort by distance
         aCleanQuick.sort( ( oQuickOne, oQuickTwo ) => oQuickOne.distance - oQuickTwo.distance );
