@@ -46,27 +46,23 @@ let oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.
             bState,
             iCurrentDay = new Date().getDay(),
             iCurrentHours = new Date().getHours() + ( new Date().getMinutes()/60 );
-/*
 
-              if ( iCurrentDay >= hours[ iCurrentDay][0] && iCurrentHours <= hours[iCurrentDay][1]) {
-                bState = "ouvert";
-              }else
-                bState = "fermé";
-            */
 
             // clean empty state on Quicks
-            aCleanQuick = aQuicks.map( ( {  _id, name, address} ) => 
-/*
+            aCleanQuick = aQuicks.map( ( {  _id, name, address} ) =>
+/*          {
               if ( iCurrentDay >= hours[ iCurrentDay][0] && iCurrentHours <= hours[iCurrentDay][1]) {
                 bState = "ouvert";
               }else {
                 bState = "fermé";
               }
 
-              return{
-                "id": _id,
-                name, address, bState
-              }*/
+              return {
+                  "id": _id,
+                  "bState": bState,
+                  "distance": distance( oCurrentPosition, { latitude, longitude } ) * 1000,
+                  name, address,
+              };*/
               ({
                    _id, name, address
                     }));
