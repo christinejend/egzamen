@@ -17,7 +17,7 @@
       },
       "template": `
           <div class="quick-details">
-            <router-link to="/">&lsaquo; retour</router-link>
+            <router-link to="/" class="back">&lsaquo; retour</router-link>
             <div class="loading" v-if="!loaded">
               <p>loading…</p>
             </div>

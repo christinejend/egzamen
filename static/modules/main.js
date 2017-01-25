@@ -34,7 +34,7 @@
                   <router-view> </router-view>
               </main>
               <footer>
-                  <a href="https://github.com/christinejend/egzamen">christinejend/egzamen</a>
+                  <a href="https://github.com/christinejend/egzamen" class="git">christinejend/egzamen</a>
               </footer>
           </div>
       `,
