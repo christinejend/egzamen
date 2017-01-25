@@ -55,7 +55,7 @@
    width: 100%;
    margin: 0 auto;
  }
- .infos, .adrs, .horaire {
+ .infos, .adrs, .horaire, .coords {
    padding: 0.5em;
  }
  h2{
@@ -65,7 +65,7 @@
    padding-left: 0.5em;
  }
  .eltH{
-   padding-left: 1.5em;
+   padding: 0.2em 1.5em;
  }
  h1{
    font-size: 1.5em;

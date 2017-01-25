@@ -36,6 +36,7 @@ let oQuicksList = Vue.component( "quicks-list", {
                   <h2>{{quick.name}} </h2>
                 </router-link>
                   <p class="adrs">Addresse :<address> {{ quick.address}}</address></p>
+                <!--  <p>Le quick est {{quick.bstate}}</p>-->
               </li>
             </ul>
         </div>

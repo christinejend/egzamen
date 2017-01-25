@@ -28,8 +28,14 @@
             </div>
             <div v-if="loaded">
               <h1>Détails du Quick de {{ quick.name }} </h1>
+                <h2> {{ quick.slug }} </h2>
                 <address class="adrs">{{ quick.address }}</address>
+                <ul class="coords">
+                  <li> Longitude : {{ quick.longitude }} </li>
+                  <li> Latitude : {{ quick.latitude }}</li>
+                </ul>
                 <ul class=horaire>
+                  <h3> Horaire :</h3>
                   <li class="eltH"> Lundi : {{quick.hours[0][0]}} - {{quick.hours[0][1]}} </li>
                   <li class="eltH"> Mardi : {{quick.hours[1][0]}} - {{quick.hours[1][1]}} </li>
                   <li class="eltH"> Mercredi : {{quick.hours[2][0]}} - {{quick.hours[2][1]}} </li>

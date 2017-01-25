@@ -32,15 +32,13 @@ oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.long
                 return error( oRequest, oResponse, "Unknown Quick", 404 );
             }
 
-            let { _id, name, address, latitude,longitude, hours, empty } = oQuick,
+            let { _id, name, address, latitude,longitude, hours, empty, slug } = oQuick,
                 oCleanQuick;
 
             oCleanQuick = {
                 "id": _id,
-                "empty": !!empty, name, address, latitude, longitude, hours
+                "empty": !!empty, name, address, latitude, longitude, hours, slug
             };
-
-            /*MISS SOMETHIN */
 
             if ( oCurrentPosition ) {
                 oCleanQuick.distance = distance( oCurrentPosition, oCleanQuick ) * 1000;

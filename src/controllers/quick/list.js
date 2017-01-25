@@ -13,13 +13,7 @@ const ARC_KILOMETER = 0.009259, // 1 décimale de lat/lng vaut X km.
     MAX_RADIUS = 10;
 
   export default function( oRequest, oResponse ) {
-/* LES QUICKS SONT UNIQUEMENT EN BELGIUE DANS LE DOSSIER
-      let sCountryCode = ( oRequest.query.country || "" ).toUpperCase();
-
-      if ( !sCountryCode ) {
-          error( oRequest, oResponse, "Mandatory country query params not found!", 400 );
-      }
-*/
+// LES QUICKS SONT UNIQUEMENT EN BELGIUE DANS LE DOSSIER
 
 let oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.longitude ),
       iSearchRadius = +oRequest.query.radius;
@@ -48,13 +42,34 @@ let oCurrentPosition = checkPosition( +oRequest.query.latitude, +oRequest.query.
         }  )
           .toArray()
           .then( ( aQuicks = [] ) => {
-            let aCleanQuick/*,
-            aQuickToReset = []*/;
+            let aCleanQuick,
+            bState,
+            iCurrentDay = new Date().getDay(),
+            iCurrentHours = new Date().getHours() + ( new Date().getMinutes()/60 );
+/*
 
-            // clean empty state on Quicks, clean useless properties AND compute distance
-            aCleanQuick = aQuicks.map( ( {  _id, name, address } ) => ({
-               _id, name, address
-                }));
+              if ( iCurrentDay >= hours[ iCurrentDay][0] && iCurrentHours <= hours[iCurrentDay][1]) {
+                bState = "ouvert";
+              }else
+                bState = "fermé";
+            */
+
+            // clean empty state on Quicks
+            aCleanQuick = aQuicks.map( ( {  _id, name, address} ) => 
+/*
+              if ( iCurrentDay >= hours[ iCurrentDay][0] && iCurrentHours <= hours[iCurrentDay][1]) {
+                bState = "ouvert";
+              }else {
+                bState = "fermé";
+              }
+
+              return{
+                "id": _id,
+                name, address, bState
+              }*/
+              ({
+                   _id, name, address
+                    }));
 
         // sort by distance
         aCleanQuick.sort( ( oQuickOne, oQuickTwo ) => oQuickOne.distance - oQuickTwo.distance );

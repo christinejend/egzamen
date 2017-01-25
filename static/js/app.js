@@ -17080,7 +17080,7 @@ module.exports = Vue$3;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _vue = require("vue");
@@ -17100,41 +17100,41 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   */
 
 var oQuickDetails = _vue2.default.component("quick-details", {
-    "data": function data() {
-        return {
-            "loaded": false,
-            "quick": {},
-            "error": null
-        };
+  "data": function data() {
+    return {
+      "loaded": false,
+      "quick": {},
+      "error": null
+    };
+  },
+  "template": "\n          <div class=\"quick-details\">\n            <router-link to=\"/\">&lsaquo; retour</router-link>\n            <div class=\"loading\" v-if=\"!loaded\">\n              <p>loading\u2026</p>\n            </div>\n            <div class=\"error\" v-if=\"loaded && error\">\n              <p>\n                <strong>Error:</strong> {{ error }}\n              </p>\n            </div>\n            <div v-if=\"loaded\">\n              <h1>D\xE9tails du Quick de {{ quick.name }} </h1>\n                <h2> {{ quick.slug }} </h2>\n                <address class=\"adrs\">{{ quick.address }}</address>\n                <ul class=\"coords\">\n                  <li> Longitude : {{ quick.longitude }} </li>\n                  <li> Latitude : {{ quick.latitude }}</li>\n                </ul>\n                <ul class=horaire>\n                  <h3> Horaire :</h3>\n                  <li class=\"eltH\"> Lundi : {{quick.hours[0][0]}} - {{quick.hours[0][1]}} </li>\n                  <li class=\"eltH\"> Mardi : {{quick.hours[1][0]}} - {{quick.hours[1][1]}} </li>\n                  <li class=\"eltH\"> Mercredi : {{quick.hours[2][0]}} - {{quick.hours[2][1]}} </li>\n                  <li class=\"eltH\"> Jeudi : {{quick.hours[3][0]}} - {{quick.hours[3][1]}} </li>\n                  <li class=\"eltH\"> Vendredi : {{quick.hours[4][0]}} - {{quick.hours[4][1]}} </li>\n                  <li class=\"eltH\"> Samedi : {{quick.hours[5][0]}} - {{quick.hours[5][1]}} </li>\n                </ul>\n            </div>\n        </div>\n      ",
+  mounted: function mounted() {
+    this.fetchInfos(this.$route.params.id);
+  },
+
+  "methods": {
+    fetchInfos: function fetchInfos(sQuickId) {
+      var _this = this;
+
+      return (0, _reqwest2.default)({
+        "url": "/quick/" + sQuickId,
+        "method": "get"
+      }).then(function (oResponse) {
+        var oQuick = oResponse.data;
+
+        _this.loaded = true;
+        _this.quick = oQuick;
+      }).catch(this.showError);
     },
-    "template": "\n          <div class=\"quick-details\">\n            <router-link to=\"/\">&lsaquo; retour</router-link>\n            <div class=\"loading\" v-if=\"!loaded\">\n              <p>loading\u2026</p>\n            </div>\n            <div class=\"error\" v-if=\"loaded && error\">\n              <p>\n                <strong>Error:</strong> {{ error }}\n              </p>\n            </div>\n            <div v-if=\"loaded\">\n              <h1>D\xE9tails du Quick de {{ quick.name }} </h1>\n                <address class=\"adrs\">{{ quick.address }}</address>\n                <ul class=horaire>\n                  <li class=\"eltH\"> Lundi : {{quick.hours[0][0]}} - {{quick.hours[0][1]}} </li>\n                  <li class=\"eltH\"> Mardi : {{quick.hours[1][0]}} - {{quick.hours[1][1]}} </li>\n                  <li class=\"eltH\"> Mercredi : {{quick.hours[2][0]}} - {{quick.hours[2][1]}} </li>\n                  <li class=\"eltH\"> Jeudi : {{quick.hours[3][0]}} - {{quick.hours[3][1]}} </li>\n                  <li class=\"eltH\"> Vendredi : {{quick.hours[4][0]}} - {{quick.hours[4][1]}} </li>\n                  <li class=\"eltH\"> Samedi : {{quick.hours[5][0]}} - {{quick.hours[5][1]}} </li>\n                </ul>\n            </div>\n        </div>\n      ",
-    mounted: function mounted() {
-        this.fetchInfos(this.$route.params.id);
-    },
 
-    "methods": {
-        fetchInfos: function fetchInfos(sQuickId) {
-            var _this = this;
+    //  console.log(oQuick);
+    showError: function showError(_ref) {
+      var message = _ref.message;
 
-            return (0, _reqwest2.default)({
-                "url": "/quick/" + sQuickId,
-                "method": "get"
-            }).then(function (oResponse) {
-                var oQuick = oResponse.data;
-
-                _this.loaded = true;
-                _this.quick = oQuick;
-            }).catch(this.showError);
-        },
-
-        //  console.log(oQuick);
-        showError: function showError(_ref) {
-            var message = _ref.message;
-
-            this.loaded = true;
-            this.error = message;
-        }
+      this.loaded = true;
+      this.error = message;
     }
+  }
 });
 
 exports.default = oQuickDetails;
@@ -17168,7 +17168,7 @@ var oQuicksList = _vue2.default.component("quicks-list", {
             "quicks": []
         };
     },
-    "template": "\n        <div class=\"quicks-list\">\n\n\n            <h1>Liste des Quick les plus proches de vous</h1>\n\n            <div class=\"loading\" v-if=\"!loaded\">\n                  <p>loading\u2026</p>\n            </div>\n            <div class=\"error\" v-if=\"loaded && error\">\n              <p>\n                <strong>Error:</strong> {{ error }}\n              </p>\n            </div>\n            <ul class=infos>\n              <li v-for=\"quick in quicks\">\n                <router-link :to=\"quick._id\">\n                  <h2>{{quick.name}} </h2>\n                </router-link>\n                  <p class=\"adrs\">Addresse :<address> {{ quick.address}}</address></p>\n              </li>\n            </ul>\n        </div>\n    ",
+    "template": "\n        <div class=\"quicks-list\">\n\n\n            <h1>Liste des Quick les plus proches de vous</h1>\n\n            <div class=\"loading\" v-if=\"!loaded\">\n                  <p>loading\u2026</p>\n            </div>\n            <div class=\"error\" v-if=\"loaded && error\">\n              <p>\n                <strong>Error:</strong> {{ error }}\n              </p>\n            </div>\n            <ul class=infos>\n              <li v-for=\"quick in quicks\">\n                <router-link :to=\"quick._id\">\n                  <h2>{{quick.name}} </h2>\n                </router-link>\n                  <p class=\"adrs\">Addresse :<address> {{ quick.address}}</address></p>\n                <!--  <p>Le quick est {{quick.bstate}}</p>-->\n              </li>\n            </ul>\n        </div>\n    ",
     mounted: function mounted() {
         this.updateQuick();
     },
